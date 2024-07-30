@@ -111,28 +111,28 @@ const Coursedetail = ({ params }) => {
 
   const parsedDescription = courseData
     ? parse(courseData.description, {
-        replace: (domNode) => {
-          if (domNode.type === "tag") {
-            // For example, add a class to all <p> elements
-            if (domNode.name === "p") {
-              const props = { className: "p-5" };
-              return <p {...props}>{domToReact(domNode.children)}</p>;
-            }
-            if (domNode.name === "h3") {
-              const props = { className: "p-5 text-lg" };
-              return <p {...props}>{domToReact(domNode.children)}</p>;
-            }
-            if (domNode.name === "ul") {
-              const props = { className: "p-5" };
-              return <p {...props}>{domToReact(domNode.children)}</p>;
-            }
-            if (domNode.name === "h2") {
-              const props = { className: "p-5" };
-              return <p {...props}>{domToReact(domNode.children)}</p>;
-            }
+      replace: (domNode) => {
+        if (domNode.type === "tag") {
+          // For example, add a class to all <p> elements
+          if (domNode.name === "p") {
+            const props = { className: "p-5" };
+            return <p {...props}>{domToReact(domNode.children)}</p>;
           }
-        },
-      })
+          if (domNode.name === "h3") {
+            const props = { className: "p-5 text-lg" };
+            return <p {...props}>{domToReact(domNode.children)}</p>;
+          }
+          if (domNode.name === "ul") {
+            const props = { className: "p-5" };
+            return <p {...props}>{domToReact(domNode.children)}</p>;
+          }
+          if (domNode.name === "h2") {
+            const props = { className: "p-5" };
+            return <p {...props}>{domToReact(domNode.children)}</p>;
+          }
+        }
+      },
+    })
     : null;
 
   if (isLoading) {
@@ -190,11 +190,12 @@ const Coursedetail = ({ params }) => {
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-4 max-sm:justify-center">
-                  <div>
+                  <Link href={`/brochure/${courseData?.url_slug}`}>
                     <button className="bg-[#152438] border border-white text-white font-bold py-2 px-4 rounded">
                       Download Course Brochure
                     </button>
-                  </div>
+                  </Link>
+
 
                   <Link
                     href="https://lms.pnytraining.com"
@@ -246,11 +247,10 @@ const Coursedetail = ({ params }) => {
             {modules.map((module, index) => (
               <div
                 key={module.id}
-                className={`h-auto md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${
-                  selectedModuleId === module.id
-                    ? "bg-blue-500 text-white"
-                    : "bg-white"
-                }`}
+                className={`h-auto md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${selectedModuleId === module.id
+                  ? "bg-blue-500 text-white"
+                  : "bg-white"
+                  }`}
                 onClick={() => handleModuleClick(module.id)}
               >
                 {module.title}{" "}
