@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.lgh {
+  @apply lg:text-4xl max-sm:text-2xl md:text-2xl font-bold text-center;
+}
+.lgp {
+  @apply font-normal text-center lg:w-[990px] max-sm:text-base;
+}
+
+.loader-wrapper {
+  position: relative;
+}
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Black with 50% opacity */
+}
+
+.loaderContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Ensure the loader is above the overlay */
+}
+
+@keyframes neonLightBorder {
+  0%,
+  100% {
+    border-color: #ff0000; /* Red */
+  }
+
+  50% {
+    border-color: #0000ff; /* Blue */
+  }
+  75% {
+    border-color: #ff0000; /* Green */
+  }
+}
+
+.neon-light-box {
+  animation: neonLightBorder 4s linear infinite;
+  border: 2px solid;
+  border-image-slice: 1;
+}
+
+.neon-light-top {
+  border-top: 1px solid;
+  border-image: linear-gradient(
+    90deg,
+    #06617f,
+    #87ceeb
+  ); /* Light Blue Gradient */
+  border-image-slice: 1;
+  animation: neonLightBorder 4s linear infinite;
+}
+
+/* Blue */
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  background: none;
+}
+
+/* White-contactus */
+.outline-text-white {
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  background: none;
+  font-size: 100px;
+}
+
+/* Blog details page picture border animation */
+@keyframes rgb-light {
+  0% {
+    background-color: red;
+  }
+  33% {
+    background-color: green;
+  }
+  66% {
+    background-color: blue;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+.rgb-light-animation {
+  animation: rgb-light 4s linear infinite;
+  position: relative;
+  z-index: 1;
+}
+
+.rgb-light-animation::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(128, 128, 128, 0.5); /* Adjust the gray overlay */
+  z-index: -1;
+}
+
+/* E-flyer animation */
+
+@keyframes fillEffect {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.outline-text-white-flyers {
+  position: relative;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  font-size: 50px;
+  background: none;
+  z-index: 1;
+}
+
+.outline-text-white-flyers::before {
+  content: "E-Flyers";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #fff; /* or any color you want the fill to be */
+  -webkit-text-stroke: 0;
+  z-index: -1;
+  animation: fillEffect 2s ease forwards;
+}
+
+/* This container will hide the overflowing part of the pseudo-element */
+.text-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container {
+  width: 500px; /* Set the desired width */
+  height: 300px; /* Set the desired height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* End */
