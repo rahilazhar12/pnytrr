@@ -4,11 +4,18 @@ import { useRouter, useParams } from 'next/navigation';
 
 const BrochureDownload = ({ params }) => {
   const router = useRouter();
-  const { slug } = params
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', city: '' });
+  const { slug } = params;
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', city: '', id_address: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [courseData, setCourseData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://api.ipify.org?format=json")
+      .then((response) => response.json())
+      .then((data) => setFormData((prevData) => ({ ...prevData, id_address: data.ip })))
+      .catch((error) => console.error("Error fetching IP address:", error));
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -69,6 +76,9 @@ const BrochureDownload = ({ params }) => {
       fetchCourseData();
     }
   }, [slug]);
+
+
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
