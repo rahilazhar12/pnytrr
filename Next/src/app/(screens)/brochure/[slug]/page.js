@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const BrochureDownload = ({ params }) => {
   const router = useRouter();

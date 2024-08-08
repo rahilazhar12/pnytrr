@@ -119,7 +119,13 @@ const Footer = () => {
                             href="/best-institute-for-it-courses-in-arfa-karim-tower"
                             className="hover:text-blue-500"
                         >
-                            Best Institute
+                            Best Institute in Arfa
+                        </Link>
+                        <Link
+                            href="/best-online-it-institute-in-lahore"
+                            className="hover:text-blue-500"
+                        >
+                            Best Institute in Lahore
                         </Link>
                     </nav>
 

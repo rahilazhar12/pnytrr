@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import {
   FaBookOpen,
   FaChalkboardTeacher,
@@ -15,25 +14,10 @@ import {
 import ScrollToTop from "@/app/Components/Scrolltotop/Scrolltop";
 import parse, { domToReact } from "html-react-parser";
 import vector from "../../assets/images/vecter.png";
-import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
-import { motion } from "framer-motion";
-import { IoMdDownload } from "react-icons/io";
+import gif from '../../assets/image/gif.gif';
 
-const gif = dynamic(() => import("../../assets/image/gif.gif"), { ssr: false });
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: "auto",
-  maxWidth: "90%",
-  bgcolor: "background.paper",
-  border: "1px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+
 
 const Coursedetail = ({ params }) => {
   const courseSlug = params.slug;
