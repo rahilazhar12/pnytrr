@@ -1,4 +1,4 @@
-import BestInstituteInLahore from './bestinstituteinlahore';
+import BestInstituteInLahore from './Bestinstituteinlahore';
 
 const Page = async () => {
     const metadata = await fetch("https://www.admin777.pny-trainings.com/api/pages/best-online-it-institute-in-lahore")
