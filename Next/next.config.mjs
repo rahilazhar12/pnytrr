@@ -5,7 +5,6 @@ const nextConfig = {
     domains: ['www.admin777.pny-trainings.com'],
     unoptimized: true,
   },
-  trailingSlash: false,
 };
 
 export default nextConfig;
