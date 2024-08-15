@@ -23,7 +23,7 @@ export default async function Home() {
     <>
       <title>{metadata.metatitle}</title>
       <meta name="description" content={metadata.metadescription} />
-      <meta name="google-site-verification" content="llIF7oe0hkRA4sQh9yNOY_UHtvvgTTfW0w6Nxul4fYE"/>
+      <meta name="google-site-verification" content="xt9UQlTcyB46zJ1blAQyrgQvW-0AdlxqSsmkR8bUB4Y" />
 
 
       {/* <meta http-equiv="Content-Security-Policy" content="default-src 'self'" /> */}
